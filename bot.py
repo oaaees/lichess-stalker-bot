@@ -1,6 +1,10 @@
 import sys
 import urllib.request
 import json
+import time
+
+from playsound import playsound
+
 
 def validate_data(user, user_data):
     if len(user_data) == 0 :
@@ -18,13 +22,18 @@ def get_user_data(user):
 
 def check_if_online(user_data):
     if "online" in user_data.keys() and user_data["online"] == True:
-        print(user_data["id"] + " is online!")
+        print("\033[1;32m" + user_data["id"] + " is online!" + "\033[1;0m")
+        playsound('staffordgambittime.mp3')
     else : 
-        print("NOT online")
+        print("\033[1;31m" + "NOT online" + "\033[1;0m" )
 
 def main():
     user = input("Enter lichess username to track: ")
-    user_data = get_user_data(user)
-    check_if_online(user_data)
+
+    while True:
+        user_data = get_user_data(user)
+        check_if_online(user_data)
+        time.sleep(60)
+
 
 main()
