@@ -2,6 +2,8 @@
 
 This is a Python script to know when your friend or you favorite lichess user is online
 
+![Screenshot](assets/screenshot.png)  
+
 ## How to run
 
 You will need to install Python if you do not have it already. I coded it using version 3.11.5

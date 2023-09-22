@@ -23,7 +23,7 @@ def get_user_data(user):
 def check_if_online(user_data):
     if "online" in user_data.keys() and user_data["online"] == True:
         print("\033[1;32m" + user_data["id"] + " is online!" + "\033[1;0m")
-        playsound('staffordgambittime.mp3')
+        playsound('assets/staffordgambittime.mp3')
     else : 
         print("\033[1;31m" + "NOT online" + "\033[1;0m" )
 
